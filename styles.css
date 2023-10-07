@@ -1,3 +1,4 @@
+/* Estilos para toda a página */
 body {
     margin: 0;
     padding: 0;
@@ -5,12 +6,13 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: url('/pf-fortune-tiger.jpg');
+    background-image: url('/Captura\ de\ tela\ 2023-10-06\ 222513.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover; /* Para cobrir toda a página */
 }
 
+/* Estilos para o contêiner principal */
 .container {
     text-align: center;
     position: relative;
@@ -20,14 +22,15 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
-    width: 50vh;
+    width: 50vw; /* Ajuste para ocupar metade da largura da tela */
+    position: relative; /* Adicione position: relative para que os elementos absolutos sejam posicionados em relação a este contêiner */
 }
 
 /* Estilos responsivos para dispositivos móveis */
 @media (max-width: 768px) {
     .container {
         height: 100vh; /* Tela cheia em dispositivos móveis */
-        width: 100vh;
+        width: 100vw; /* Ajuste para ocupar a largura total da tela */
         background-size: cover;
         position: relative; /* Adicione position: relative para que os elementos absolutos sejam posicionados em relação a este contêiner */
     }
@@ -35,15 +38,15 @@ body {
     .progress-container {
         width: 100%;
         margin: 0;
-        top: auto; /* Remove a margem superior */
-        bottom: 0; /* Move a barra para o fundo */
-        position: absolute; /* Posição absoluta no fundo */
+        top: 0; /* Alinhe ao topo */
+        bottom: auto; /* Remova o posicionamento no fundo */
+        position: absolute; /* Posição absoluta no topo */
     }
 
     .button-hidden {
-        margin-top: 10px; /* Espaçamento do botão em dispositivos móveis */
-        position: absolute; /* Posição absoluta no fundo */
-        bottom: 0; /* Alinhar ao fundo */
+        margin-top: -50px; /* Ajuste conforme necessário para posicionar o botão acima da barra de progresso */
+        position: absolute; /* Posição absoluta no topo */
+        bottom: auto; /* Remova o posicionamento no fundo */
     }
 
     .progress-text {
@@ -52,8 +55,17 @@ body {
         font-size: large;
         margin-top: 10px;
         margin-bottom: 10px;
-        position: absolute; /* Posição absoluta no fundo */
-        bottom: 0; /* Alinhar ao fundo */
+        position: absolute; /* Posição absoluta no topo */
+        bottom: auto; /* Remova o posicionamento no fundo */
+    }
+
+    .progress-bar {
+        width: 100%;
+        height: 15px;
+        background-color: #FF3898; /* Cor de fundo rosa */
+        position: absolute; /* Posição absoluta no topo */
+        bottom: 0; /* Fica no rodapé da página */
+        left: 0;
     }
     
     button {
@@ -63,20 +75,20 @@ body {
         padding: 40px 80px;
         cursor: pointer;
         transition: color 0.3s ease-in-out, transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-        position: absolute; /* Posição absoluta no fundo */
-        bottom: 0; /* Alinhar ao fundo */
+        position: absolute; /* Posição absoluta no topo */
+        bottom: auto; /* Remova o posicionamento no fundo */
     }
-    
+
     button:hover {
         color: #FF3898; /* Cor do texto em rosa quando hover */
     }
-    
+
     .button-hidden {
-        opacity: 0; 
+        opacity: 0;
     }
 }
 
-
+/* Estilos fora do @media query (para desktop) */
 .progress-container {
     width: 300px;
     margin: 0 auto; /* Centraliza horizontalmente */
@@ -93,7 +105,6 @@ body {
     bottom: 200px; /* Fica no rodapé da página */
     left: 0;
 }
-
 
 .progress-bar::before {
     content: "";
@@ -132,7 +143,6 @@ body {
 }
 
 button {
-    margin-top: 650px;
     background: transparent; /* Fundo transparente */
     color: #9C225D; /* Cor do texto em rosa escuro */
     border: none; /* Remove a borda */
