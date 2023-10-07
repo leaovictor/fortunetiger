@@ -41,6 +41,32 @@ body {
     .button-hidden {
         margin-top: 10px; /* Espaçamento do botão em dispositivos móveis */
     }
+
+    .progress-text {
+        color: aliceblue;
+        font-family: sans-serif;
+        font-size: large;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    button {
+        margin-top: 650px;
+        background: transparent; /* Fundo transparente */
+        color: #9C225D; /* Cor do texto em rosa escuro */
+        border: none; /* Remove a borda */
+        padding: 40px 80px;
+        cursor: pointer;
+        transition: color 0.3s ease-in-out, transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    }
+    
+    button:hover {
+        color: #FF3898; /* Cor do texto em rosa quando hover */
+    }
+    
+    .button-hidden {
+        opacity: 0; /* Torna o botão invisível */
+    }
 }
 
 .progress-container {
@@ -94,6 +120,7 @@ body {
     font-family: sans-serif;
     font-size: large;
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 button {
