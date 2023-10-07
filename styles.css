@@ -72,7 +72,7 @@ body {
     }
     
     .button-hidden {
-        opacity: 0; /* Torna o botão invisível */
+        opacity: 0; 
     }
 }
 
