@@ -3,10 +3,11 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column; /* Adiciona uma direção de coluna para centralizar verticalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
     min-height: 100vh;
-    background-image: url('/Captura\ de\ tela\ 2023-10-06\ 222513.png');
+    background-image: url('/jogo-do-tigre-que-ganha-dinheiro-1024x501.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover; /* Para cobrir toda a página */
