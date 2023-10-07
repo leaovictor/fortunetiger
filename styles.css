@@ -18,8 +18,9 @@ body {
     background-image: url('/Captura\ de\ tela\ 2023-10-06\ 222513.png');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
-    height: 600px;
+    background-size: cover;
+    height: 100vh;
+    width: 50vh;
 }
 
 /* Estilos responsivos para dispositivos móveis */
@@ -89,15 +90,18 @@ body {
 }
 
 .progress-text {
+    color: aliceblue;
+    font-family: sans-serif;
+    font-size: large;
     margin-top: 10px;
 }
 
 button {
-    margin-top: 570px;
+    margin-top: 650px;
     background: transparent; /* Fundo transparente */
     color: #9C225D; /* Cor do texto em rosa escuro */
     border: none; /* Remove a borda */
-    padding: 40px 45px;
+    padding: 40px 80px;
     cursor: pointer;
     transition: color 0.3s ease-in-out, transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
