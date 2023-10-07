@@ -29,6 +29,7 @@ body {
         height: 100vh; /* Tela cheia em dispositivos móveis */
         width: 100vh;
         background-size: cover;
+        position: relative; /* Adicione position: relative para que os elementos absolutos sejam posicionados em relação a este contêiner */
     }
 
     .progress-container {
@@ -36,10 +37,13 @@ body {
         margin: 0;
         top: auto; /* Remove a margem superior */
         bottom: 0; /* Move a barra para o fundo */
+        position: absolute; /* Posição absoluta no fundo */
     }
 
     .button-hidden {
         margin-top: 10px; /* Espaçamento do botão em dispositivos móveis */
+        position: absolute; /* Posição absoluta no fundo */
+        bottom: 0; /* Alinhar ao fundo */
     }
 
     .progress-text {
@@ -48,16 +52,19 @@ body {
         font-size: large;
         margin-top: 10px;
         margin-bottom: 10px;
+        position: absolute; /* Posição absoluta no fundo */
+        bottom: 0; /* Alinhar ao fundo */
     }
     
     button {
-        margin-top: 650px;
         background: transparent; /* Fundo transparente */
         color: #9C225D; /* Cor do texto em rosa escuro */
         border: none; /* Remove a borda */
         padding: 40px 80px;
         cursor: pointer;
         transition: color 0.3s ease-in-out, transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        position: absolute; /* Posição absoluta no fundo */
+        bottom: 0; /* Alinhar ao fundo */
     }
     
     button:hover {
@@ -68,6 +75,7 @@ body {
         opacity: 0; /* Torna o botão invisível */
     }
 }
+
 
 .progress-container {
     width: 300px;
