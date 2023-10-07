@@ -77,7 +77,7 @@ body {
         cursor: pointer;
         transition: color 0.3s ease-in-out, transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
         position: absolute; /* Posição absoluta */
-        bottom: 0; /* Fica no fundo da página */
+        bottom: -10px; /* Fica no fundo da página */
         left: 50%; /* Centraliza horizontalmente */
         transform: translateX(-50%); /* Centraliza horizontalmente */
     }
