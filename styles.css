@@ -39,7 +39,7 @@ body {
     }
 
     .button-hidden {
-        margin-top: 20px; /* Espaçamento do botão em dispositivos móveis */
+        margin-top: 10px; /* Espaçamento do botão em dispositivos móveis */
     }
 }
 
