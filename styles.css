@@ -76,9 +76,12 @@ body {
         padding: 40px 80px;
         cursor: pointer;
         transition: color 0.3s ease-in-out, transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-        position: absolute; /* Posição absoluta no topo */
-        bottom: auto; /* Remova o posicionamento no fundo */
+        position: absolute; /* Posição absoluta */
+        bottom: 0; /* Fica no fundo da página */
+        left: 50%; /* Centraliza horizontalmente */
+        transform: translateX(-50%); /* Centraliza horizontalmente */
     }
+    
 
     button:hover {
         color: #FF3898; /* Cor do texto em rosa quando hover */
@@ -150,6 +153,10 @@ button {
     padding: 40px 80px;
     cursor: pointer;
     transition: color 0.3s ease-in-out, transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    position: absolute; /* Posição absoluta */
+    bottom: 250px; /* Fica no fundo da página */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Centraliza horizontalmente */
 }
 
 button:hover {
