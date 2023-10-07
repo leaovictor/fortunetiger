@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (progress >= totalSteps) {
                 progressText.textContent = `Completar [${progress}]`;
                 setTimeout(function () {
-                    window.location.href = 'https://seu-novo-link.com';
+                    window.location.href = 'https://radarbets.com';
                 }, 500); // Redireciona após 0,5 segundos
                 return;
             }
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         requestAnimationFrame(updateProgressBar);
         setTimeout(function () {
-            window.location.href = 'https://seu-novo-link.com';
+            window.location.href = 'https://radarbets.com';
         }, progressBarDuration);
     }
 });
