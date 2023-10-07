@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('/pf-fortune-tiger.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; /* Para cobrir toda a página */
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    z-index: 10000;
+    background-image: url('/Captura\ de\ tela\ 2023-10-06\ 222513.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 600px;
+}
+
+/* Estilos responsivos para dispositivos móveis */
+@media (max-width: 768px) {
+    .container {
+        height: 100vh; /* Tela cheia em dispositivos móveis */
+        width: 100vh;
+        background-size: cover;
+    }
+
+    .progress-container {
+        width: 100%;
+        margin: 0;
+        top: auto; /* Remove a margem superior */
+        bottom: 0; /* Move a barra para o fundo */
+    }
+
+    .button-hidden {
+        margin-top: 20px; /* Espaçamento do botão em dispositivos móveis */
+    }
+}
+
+.progress-container {
+    width: 300px;
+    margin: 0 auto; /* Centraliza horizontalmente */
+    position: relative;
+    opacity: 0; /* Inicialmente, torna a barra invisível */
+    transition: opacity 0.5s ease-in-out;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 15px;
+    background-color: #FF3898; /* Cor de fundo rosa */
+    position: fixed; /* Posição fixa */
+    bottom: 200px; /* Fica no rodapé da página */
+    left: 0;
+}
+
+
+.progress-bar::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        #9C225D 15px, /* Cor das listras mais escuras */
+        #9C225D 25px /* Cor das listras mais escuras */
+    );
+    animation: progressStripes 2s linear infinite; /* Animação das listras */
+    background-size: 400px 400px; /* Tamanho das listras */
+    background-position: -40px 0; /* Inicia as listras fora da barra */
+}
+
+@keyframes progressStripes {
+    0% {
+        background-position: -40px 0; /* Inicia as listras fora da barra */
+    }
+    100% {
+        background-position: 40px 0; /* Move as listras para a direita */
+    }
+}
+
+.progress-text {
+    margin-top: 10px;
+}
+
+button {
+    margin-top: 570px;
+    background: transparent; /* Fundo transparente */
+    color: #9C225D; /* Cor do texto em rosa escuro */
+    border: none; /* Remove a borda */
+    padding: 40px 45px;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out, transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+button:hover {
+    color: #FF3898; /* Cor do texto em rosa quando hover */
+}
+
+.button-hidden {
+    opacity: 0; /* Torna o botão invisível */
+}
