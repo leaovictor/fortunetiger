@@ -66,9 +66,9 @@ body {
         width: 100%; /* Defina a largura como 100% da largura do progress-container */
         height: 5px;
         background-color: #FF3898; /* Cor de fundo rosa */
-        position: absolute; /* Posição absoluta no topo */
-        bottom: 0; /* Fica no rodapé da página */
-        left: 0;
+        position: absolute; /* Posição absoluta */
+        bottom: 600; /* Fica no rodapé da página */
+        left: -10;
     }
     
     button {
@@ -105,14 +105,15 @@ body {
 }
 
 .progress-bar {
-    width: 100px; /* Largura desejada */
+    width: 100%; /* Defina a largura como 100% da largura do progress-container */
     height: 5px;
     background-color: #FF3898; /* Cor de fundo rosa */
     position: absolute; /* Posição absoluta */
     bottom: 0; /* Fica no rodapé da página */
-    left: 0; /* Inicie da esquerda */
-    transform: translateX(100%); /* Inicie da direita */
-    animation: moveProgressBar 2s linear forwards; /* Animação para mover da direita para a esquerda */
+    left: 0; /* Inicie da borda esquerda */
+    transform-origin: left; /* Define a origem da transformação à esquerda */
+    transform: scaleX(1); /* Inicialmente, a barra está totalmente reduzida em largura */
+    transition: transform 2s ease-in-out; /* Animação para expandir a barra */
 }
 
 @keyframes moveProgressBar {
