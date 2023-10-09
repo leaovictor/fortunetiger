@@ -104,15 +104,43 @@ body {
     transition: opacity 0.5s ease-in-out;
 }
 
-
 .progress-bar {
     width: 300px; /* Largura desejada */
     height: 5px;
     background-color: #FF3898; /* Cor de fundo rosa */
     position: absolute; /* Posição absoluta */
     bottom: 0; /* Fica no rodapé da página */
-    left: 50%; /* Centraliza horizontalmente */
-    transform: translateX(-50%); /* Centraliza horizontalmente */
+    left: 0; /* Inicie da esquerda */
+    transform: translateX(100%); /* Inicie da direita */
+    animation: moveProgressBar 2s linear forwards; /* Animação para mover da direita para a esquerda */
+}
+
+@keyframes moveProgressBar {
+    0% {
+        transform: translateX(100%); /* Inicie da direita */
+    }
+    100% {
+        transform: translateX(0); /* Mova para a esquerda */
+    }
+}
+
+.progress-bar::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        #9C225D 15px, /* Cor das listras mais escuras */
+        #9C225D 25px /* Cor das listras mais escuras */
+    );
+    animation: progressStripes 2s linear infinite; /* Animação das listras */
+    background-size: 400px 400px; /* Tamanho das listras */
+    background-position: -40px 0; /* Inicia as listras fora da barra */
 }
 
 
@@ -135,14 +163,6 @@ body {
     background-position: -40px 0; /* Inicia as listras fora da barra */
 }
 
-@keyframes progressStripes {
-    0% {
-        background-position: -40px 0; /* Inicia as listras fora da barra */
-    }
-    100% {
-        background-position: 40px 0; /* Move as listras para a direita */
-    }
-}
 
 .progress-text {
     text-align: center;
