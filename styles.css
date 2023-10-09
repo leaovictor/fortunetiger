@@ -106,13 +106,15 @@ body {
 
 
 .progress-bar {
-    width: 50%;
+    width: 300px; /* Largura desejada */
     height: 5px;
     background-color: #FF3898; /* Cor de fundo rosa */
-    position: fixed; /* Posição fixa */
-    bottom: 150px; /* Fica no rodapé da página */
-    left: 0;
+    position: absolute; /* Posição absoluta */
+    bottom: 0; /* Fica no rodapé da página */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Centraliza horizontalmente */
 }
+
 
 .progress-bar::before {
     content: "";
