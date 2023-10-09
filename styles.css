@@ -67,7 +67,7 @@ body {
         position: absolute; /* Posição absoluta no topo */
         bottom: 0; /* Fica no rodapé da página */
         left: 0;
-        bottom: 100px;
+        bottom: 150px;
     }
     
     button {
