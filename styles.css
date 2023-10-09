@@ -60,15 +60,14 @@ body {
         margin-bottom: 10px;
         position: absolute; /* Posição absoluta no topo */
         bottom: auto; /* Remova o posicionamento no fundo */
-
     }
 
     .progress-bar {
-        width: 50%;
+        width: 100%; /* Defina a largura como 100% da largura do progress-container */
         height: 5px;
         background-color: #FF3898; /* Cor de fundo rosa */
         position: absolute; /* Posição absoluta no topo */
-        bottom: -50; /* Fica no rodapé da página */
+        bottom: 0; /* Fica no rodapé da página */
         left: 0;
     }
     
@@ -94,6 +93,7 @@ body {
         opacity: 0;
     }
 }
+
 
 /* Estilos fora do @media query (para desktop) */
 .progress-container {
