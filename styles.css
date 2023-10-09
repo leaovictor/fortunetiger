@@ -57,7 +57,7 @@ body {
         margin-top: 10px;
         margin-bottom: 10px;
         position: absolute; /* Posição absoluta no topo */
-        bottom: 200px; /* Remova o posicionamento no fundo */
+        bottom: auto; /* Remova o posicionamento no fundo */
 
     }
 
