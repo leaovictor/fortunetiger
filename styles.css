@@ -37,6 +37,7 @@ body {
     }
 
     .progress-container {
+        justify-content: center;
         width: 20%; /* Defina a largura como 20% da largura da tela */
         margin: 0 auto; /* Centralize horizontalmente */
         top: 0; /* Alinhe ao topo */
