@@ -27,12 +27,32 @@ body {
     position: relative; /* Adicione position: relative para que os elementos absolutos sejam posicionados em relação a este contêiner */
 }
 
-/* Estilos responsivos para dispositivos móveis */
+/* Estilos responsivos para dispositivos móveis e desktop */
 @media (max-width: 768px) {
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column; /* Adiciona uma direção de coluna para centralizar verticalmente */
+        justify-content: center; /* Centraliza verticalmente */
+        align-items: center; /* Centraliza horizontalmente */
+        min-height: 100vh;
+        background-image: url('/pf-fortune-tiger.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover; /* Para cobrir toda a página */
+    }
+
     .container {
-        height: 100vh; /* Tela cheia em dispositivos móveis */
+        text-align: center;
+        position: relative;
+        z-index: 10000;
+        background-image: url('/Captura\ de\ tela\ 2023-10-06\ 222513.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 100vh;
         width: 100vw; /* Ajuste para ocupar a largura total da tela */
-        background-size: cover;
         position: relative; /* Adicione position: relative para que os elementos absolutos sejam posicionados em relação a este contêiner */
     }
 
@@ -70,7 +90,7 @@ body {
         bottom: 0; /* Fica no rodapé da página */
         left: 0;
     }
-    
+
     button {
         background: transparent; /* Fundo transparente */
         color: #9C225D; /* Cor do texto em rosa escuro */
@@ -84,7 +104,7 @@ body {
         transform: translateX(-50%); /* Centraliza horizontalmente */
         width: 20%; /* Defina a largura como 20% da largura da tela */
     }
-    
+
     button:hover {
         color: #FF3898; /* Cor do texto em rosa quando hover */
     }
@@ -93,6 +113,7 @@ body {
         opacity: 0;
     }
 }
+
 
 
 /* Estilos fora do @media query (para desktop) */
@@ -105,7 +126,7 @@ body {
 }
 
 .progress-bar {
-    width: 300px; /* Largura desejada */
+    width: 100px; /* Largura desejada */
     height: 5px;
     background-color: #FF3898; /* Cor de fundo rosa */
     position: absolute; /* Posição absoluta */
@@ -169,7 +190,8 @@ body {
     color: aliceblue;
     font-family: sans-serif;
     font-size: large;
-    margin-top: 700px;
+    padding: 10px;
+    margin-top: 550px;
     /* margin-bottom: 200px; */
 }
 
