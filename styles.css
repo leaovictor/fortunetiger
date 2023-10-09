@@ -37,8 +37,8 @@ body {
     }
 
     .progress-container {
-        width: 100%;
-        margin: 0;
+        width: 20%; /* Defina a largura como 20% da largura da tela */
+        margin: 0 auto; /* Centralize horizontalmente */
         top: 0; /* Alinhe ao topo */
         bottom: auto; /* Remova o posicionamento no fundo */
         position: absolute; /* Posição absoluta no topo */
@@ -80,9 +80,9 @@ body {
         bottom: -10px; /* Fica no fundo da página */
         left: 50%; /* Centraliza horizontalmente */
         transform: translateX(-50%); /* Centraliza horizontalmente */
+        width: 20%; /* Defina a largura como 20% da largura da tela */
     }
     
-
     button:hover {
         color: #FF3898; /* Cor do texto em rosa quando hover */
     }
