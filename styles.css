@@ -140,10 +140,11 @@ body {
 }
 
 .progress-text {
+    text-align: center;
     color: aliceblue;
     font-family: sans-serif;
     font-size: large;
-    margin-top: 600px;
+    margin-top: 700px;
     /* margin-bottom: 200px; */
 }
 
