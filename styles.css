@@ -68,6 +68,7 @@ body {
         background-color: #FF3898; /* Cor de fundo rosa */
         position: absolute; /* Posição absoluta */
         bottom: 600; /* Fica no rodapé da página */
+        margin-top: 300px;
         left: -10;
     }
     
