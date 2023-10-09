@@ -103,8 +103,8 @@ body {
 
 
 .progress-bar {
-    width: 100%;
-    height: 15px;
+    width: 50%;
+    height: 5px;
     background-color: #FF3898; /* Cor de fundo rosa */
     position: fixed; /* Posição fixa */
     bottom: 150px; /* Fica no rodapé da página */
