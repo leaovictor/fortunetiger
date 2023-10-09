@@ -65,7 +65,7 @@ body {
         width: 50%;
         height: 5px;
         background-color: #FF3898; /* Cor de fundo rosa */
-        position: absolute; /* Posição absoluta no topo */
+        position: fixed; /* Posição absoluta no topo */
         bottom: 0; /* Fica no rodapé da página */
         left: 0;
         bottom: 2000px;
