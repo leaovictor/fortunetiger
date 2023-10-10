@@ -4,6 +4,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const startButton = document.getElementById('start-button');
     const progressContainer = document.querySelector('.progress-container');
 
+    // Bloquear a orientação em modo retrato
+    window.addEventListener("orientationchange", function () {
+        if (window.orientation !== 0) { // Paisagem
+            window.orientation === 90 ? screen.lockOrientation("landscape-primary") : screen.lockOrientation("landscape-secondary");
+        } else { // Retrato
+            screen.lockOrientation("portrait");
+        }
+    });
+
+
     if (!progressBar || !progressText || !startButton || !progressContainer) {
         console.error("Elementos não encontrados no DOM.");
         return;
