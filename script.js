@@ -4,6 +4,26 @@ document.addEventListener("DOMContentLoaded", function () {
     const startButton = document.getElementById('start-button');
     const progressContainer = document.querySelector('.progress-container');
 
+    // Verifica a orientação atual e ajusta a página
+    function checkOrientation() {
+        if (window.orientation === 90 || window.orientation === -90) {
+            // Paisagem, definir a orientação para retrato
+            document.body.style.orientation = "portrait";
+        } else {
+            // Retrato, deixar a orientação como está
+            document.body.style.orientation = "auto";
+        }
+    }
+
+    // Manipula o evento de mudança de orientação
+    window.addEventListener("orientationchange", function () {
+        checkOrientation();
+    });
+
+    // Verifica a orientação inicial
+    checkOrientation();
+
+
     if (!progressBar || !progressText || !startButton || !progressContainer) {
         console.error("Elementos não encontrados no DOM.");
         return;
