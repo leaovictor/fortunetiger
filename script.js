@@ -4,14 +4,25 @@ document.addEventListener("DOMContentLoaded", function () {
     const startButton = document.getElementById('start-button');
     const progressContainer = document.querySelector('.progress-container');
 
-    // Bloquear a orientação em modo retrato
-    window.addEventListener("orientationchange", function () {
-        if (window.orientation !== 0) { // Paisagem
-            window.orientation === 90 ? screen.lockOrientation("landscape-primary") : screen.lockOrientation("landscape-secondary");
-        } else { // Retrato
-            screen.lockOrientation("portrait");
+    // Verifique a orientação atual e ajuste a página
+    function checkOrientation() {
+        if (window.innerHeight > window.innerWidth) {
+            // Retrato, deixar a orientação como está
+            document.body.style.transform = "rotate(0deg)";
+        } else {
+            // Paisagem, forçar a orientação de volta para retrato
+            document.body.style.transform = "rotate(90deg)";
         }
+    }
+
+    // Manipula o evento de mudança de orientação
+    window.addEventListener("resize", function () {
+        checkOrientation();
     });
+
+    // Verifica a orientação inicial
+    checkOrientation();
+
 
 
     if (!progressBar || !progressText || !startButton || !progressContainer) {
