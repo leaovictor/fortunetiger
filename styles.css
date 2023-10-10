@@ -117,7 +117,7 @@ body {
         cursor: pointer;
         transition: background 0.3s ease-in-out, transform 0.5s ease-in-out, opacity 0.5s ease-in-out, color 0.3s ease-in-out;
         position: absolute; /* Posição absoluta */
-        bottom: 200px; /* Fica no fundo da página */
+        bottom: 150px; /* Fica no fundo da página */
         left: 50%; /* Centraliza horizontalmente */
         transform: translateX(-50%); /* Centraliza horizontalmente */
         width: 20%; /* Defina a largura como 20% da largura da tela */
