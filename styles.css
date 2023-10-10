@@ -76,14 +76,13 @@ body {
         background: transparent; /* Fundo transparente */
         color: #9C225D; /* Cor do texto em rosa escuro */
         border: none; /* Remove a borda */
-        padding: 40px 80px;
+        padding: 80px 0; /* Padding vertical e 0 de padding horizontal para ocupar 100% da largura */
         cursor: pointer;
         transition: color 0.3s ease-in-out, transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
         position: absolute; /* Posição absoluta */
         bottom: -10px; /* Fica no fundo da página */
-        left: 50%; /* Centraliza horizontalmente */
-        transform: translateX(-50%); /* Centraliza horizontalmente */
-        width: 20%; /* Defina a largura como 20% da largura da tela */
+        left: 0; /* Alinhe à esquerda */
+        width: 100%; /* Defina a largura como 100% da largura da tela */
     }
     
     button:hover {
@@ -94,6 +93,7 @@ body {
         opacity: 0;
     }
 }
+
 
 
 /* Estilos fora do @media query (para desktop) */
