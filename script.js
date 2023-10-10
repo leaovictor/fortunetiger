@@ -1,13 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const progressBar = document.getElementById('progress-bar');
-    const progressText = document.getElementById('progress-text');
     const startButton = document.getElementById('start-button');
     const progressContainer = document.querySelector('.progress-container');
+    const progressBar = document.querySelector('.progress-fill');
+    const progressText = document.querySelector('.progress-text');
 
-
-
-
-    if (!progressBar || !progressText || !startButton || !progressContainer) {
+    if (!startButton || !progressContainer || !progressBar || !progressText) {
         console.error("Elementos não encontrados no DOM.");
         return;
     }
@@ -17,11 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const PROGRESS_DURATION = 2000;
 
     startButton.addEventListener('click', function () {
-        startButton.disabled = true;
-        startButton.classList.add('button-hidden'); // Torna o botão invisível suavemente
-
-        progressContainer.style.top = '0'; // Move a barra para a posição original
-        progressContainer.style.opacity = '1'; // Torna a barra visível
+        startButton.style.display = 'none'; // Oculta o botão
+        progressContainer.style.display = 'flex'; // Exibe a barra de progresso e texto
 
         simulateProgress();
     });
@@ -32,10 +26,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         function updateProgressBar() {
             if (progress >= TOTAL_STEPS) {
-                progressText.textContent = `Completar [${progress}]`;
+                progressText.textContent = `Completo [${progress}]`;
                 setTimeout(function () {
                     window.location.href = REDIRECT_URL;
-                }, 500); // Redireciona após 0,5 segundos
+                }, 1000); // Redireciona após 0,5 segundos
                 return;
             }
 
@@ -44,11 +38,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (progress < TOTAL_STEPS) {
                 if (progress <= 20) {
-                    progressText.textContent = `A iniciar informações [${progress}%]`;
+                    progressText.textContent = `Iniciando informações [${progress}%]`;
                 } else if (progress <= 80) {
-                    progressText.textContent = `A ler recursos [${progress}%]`;
+                    progressText.textContent = `Lendo recursos [${progress}%]`;
                 } else {
-                    progressText.textContent = `Completar [${progress}%]`;
+                    progressText.textContent = `Completo [${progress}%]`;
                 }
 
                 requestAnimationFrame(updateProgressBar);

@@ -3,247 +3,111 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column; /* Adiciona uma direção de coluna para centralizar verticalmente */
-    justify-content: center; /* Centraliza verticalmente */
-    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center;
+    align-items: center;
     min-height: 100vh;
     background-image: url('/assets/back.jpg');
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover; /* Para cobrir toda a página */
+    background-size: cover;
 }
 
 /* Estilos para o contêiner principal */
 .container {
-    text-align: center;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
     z-index: 10000;
-    background-image: url('/assets/arena.jpg');
+    background-image: url('/assets/arena.jpg'); /* Altere para a sua imagem de fundo desejada */
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
     height: 100vh;
-    width: 50vw; /* Ajuste para ocupar metade da largura da tela */
-    position: relative; /* Adicione position: relative para que os elementos absolutos sejam posicionados em relação a este contêiner */
+    width: 70vw;
+    position: absolute;
+}
+
+/* Estilos para a barra de progresso */
+.progress-container {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    width: 30%;
+    margin-top: auto; /* Coloca a barra de progresso no fundo */
+    margin-bottom: 20px; /* Adicione algum espaço entre a barra de progresso e o botão */
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #FF3898;
+    border-radius: 10px;
+    overflow: hidden;
+    display: block;
+    border: 2px solid #9C225D; /* Adiciona uma borda escura */
+}
+
+.progress-fill {
+    width: 0;
+    height: 100%;
+    background-color: #9C225D;
+    border-radius: 10px;
+    transition: width 1s ease-in-out;
+    position: relative;
+    z-index: 1;
+}
+
+.progress-text {
+    color: white;
+    font-family: sans-serif;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+button {
+    background: linear-gradient(to top, #FF3898, #9C225D);
+    color: white;
+    border: none;
+    padding: 20px 40px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.5s ease-in-out, opacity 0.5s ease-in-out, color 0.3s ease-in-out;
+    border-radius: 20px;
+    margin-top: 400px;
+}
+
+.button-hidden {
+    opacity: 0;
+}
+
+#start-button {
+    display: flex;
+    justify-content: center;
+    width: 300px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
 /* Estilos responsivos para dispositivos móveis */
 @media (max-width: 768px) {
     .container {
-        height: 100vh; /* Tela cheia em dispositivos móveis */
-        width: 100vw; /* Ajuste para ocupar a largura total da tela */
-        background-size: cover;
-        position: relative; /* Adicione position: relative para que os elementos absolutos sejam posicionados em relação a este contêiner */
+        width: 100%;
     }
 
     .progress-container {
-        display: flex;
-        justify-content: center;
-        width: 100px; /* Defina a largura como 20% da largura da tela */
-        margin: 0 auto; /* Centralize horizontalmente */
-        top: 0; /* Alinhe ao topo */
-        bottom: auto; /* Remova o posicionamento no fundo */
-        position: absolute; /* Posição absoluta no topo */
-    }
-
-    .button-hidden {
-        margin-top: -50px; /* Ajuste conforme necessário para posicionar o botão acima da barra de progresso */
-        position: absolute; /* Posição absoluta no topo */
-        bottom: auto; /* Remova o posicionamento no fundo */
-    }
-
-    .progress-text {
-        color: aliceblue;
-        font-family: sans-serif;
-        font-size: large;
-        margin-top: 10px;
-        position: absolute; /* Posição absoluta no topo */
-        bottom: auto; /* Remova o posicionamento no fundo */
+        flex-direction: column;
+        width: 80%;
     }
 
     .progress-bar {
-        width: 100%; /* Defina a largura como 100% da largura do progress-container */
-        height: 5px;
-        background-color: #FF3898; /* Cor de fundo rosa */
-        position: absolute; /* Posição absoluta */
-        bottom: 0; /* Fica no rodapé da página */
-        transform-origin: left; /* Define a origem da transformação à esquerda */
-        transform: scaleX(1); /* Inicialmente, a barra está totalmente reduzida em largura */
-        transition: transform 2s ease-in-out; /* Animação para expandir a barra */
-    }
-
-    @keyframes moveProgressBar {
-        0% {
-            transform: translateX(100%); /* Inicie da direita */
-        }
-        100% {
-            transform: translateX(0); /* Mova para a esquerda */
-        }
-    }
-
-    .progress-bar::before {
-        content: "";
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-image: repeating-linear-gradient(
-            45deg,
-            transparent,
-            transparent 10px,
-            #9C225D 15px, /* Cor das listras mais escuras */
-            #9C225D 25px /* Cor das listras mais escuras */
-        );
-        animation: progressStripes 2s linear infinite; /* Animação das listras */
-        background-size: 400px 400px; /* Tamanho das listras */
-        background-position: -40px 0; /* Inicia as listras fora da barra */
-    }
-
-    .progress-text {
-        text-align: center;
-        color: aliceblue;
-        font-family: sans-serif;
-        font-size: large;
-        padding: 10px;
-        margin-top: 550px;
+        width: 80%;
     }
 
     button {
-        background: linear-gradient(to top, #FF3898, #9C225D); /* Gradiente rosa de baixo para cima */
-        color: white; /* Cor do texto em branco para maior contraste */
-        border: none; /* Remove a borda */
-        padding: 20px 40px; /* Reduzi o tamanho do botão para um aspecto mais equilibrado */
-        cursor: pointer;
-        transition: background 0.3s ease-in-out, transform 0.5s ease-in-out, opacity 0.5s ease-in-out, color 0.3s ease-in-out;
-        position: absolute; /* Posição absoluta */
-        bottom: 150px; /* Fica no fundo da página */
-        left: 50%; /* Centraliza horizontalmente */
-        transform: translateX(-50%); /* Centraliza horizontalmente */
-        width: 20%; /* Defina a largura como 20% da largura da tela */
-        border-radius: 20px; /* Borda arredondada */
+        width: 80%;
+        margin-top: 400px;
     }
-    
-    button:hover {
-        background: linear-gradient(to top, #9C225D, #FF3898); /* Gradiente rosa invertido quando hover */
-        color: white; /* Cor do texto em branco quando hover */
-    }
-    
-    
-    .button-hidden {
-        opacity: 0; /* Torna o botão invisível */
-    }
-
-    #start-button {
-        display: flex;
-        justify-content: center;
-        width: 300px;
-        font-size: 16px;
-        font-weight: bold;
-
-    }
-    
-}
-
-/* Estilos fora do @media query (para desktop) */
-.progress-container {
-    width: 100%; /* Defina a largura como 20% da largura da tela */
-    margin: 0 auto; /* Centralize horizontalmente */
-    position: relative;
-    opacity: 0; /* Inicialmente, torna a barra invisível */
-    transition: opacity 0.5s ease-in-out;
-}
-
-.progress-bar {
-    width: 100%; /* Defina a largura como 100% da largura do progress-container */
-    height: 5px;
-    background-color: #FF3898; /* Cor de fundo rosa */
-    position: absolute; /* Posição absoluta */
-    bottom: 0; /* Fica no rodapé da página */
-    left: 0; /* Inicie da borda esquerda */
-    transform-origin: left; /* Define a origem da transformação à esquerda */
-    transform: scaleX(1); /* Inicialmente, a barra está totalmente reduzida em largura */
-    transition: transform 2s ease-in-out; /* Animação para expandir a barra */
-}
-
-@keyframes moveProgressBar {
-    0% {
-        transform: translateX(100%); /* Inicie da direita */
-    }
-    100% {
-        transform: translateX(0); /* Mova para a esquerda */
-    }
-}
-
-.progress-bar::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-image: repeating-linear-gradient(
-        45deg,
-        transparent,
-        transparent 10px,
-        #9C225D 15px, /* Cor das listras mais escuras */
-        #9C225D 25px /* Cor das listras mais escuras */
-    );
-    animation: progressStripes 2s linear infinite; /* Animação das listras */
-    background-size: 400px 400px; /* Tamanho das listras */
-    background-position: -40px 0; /* Inicia as listras fora da barra */
-}
-
-.progress-bar::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-image: repeating-linear-gradient(
-        45deg,
-        transparent,
-        transparent 10px,
-        #9C225D 15px, /* Cor das listras mais escuras */
-        #9C225D 25px /* Cor das listras mais escuras */
-    );
-    animation: progressStripes 2s linear infinite; /* Animação das listras */
-    background-size: 400px 400px; /* Tamanho das listras */
-    background-position: -40px 0; /* Inicia as listras fora da barra */
-}
-
-.progress-text {
-    text-align: center;
-    color: aliceblue;
-    font-family: sans-serif;
-    font-size: large;
-    padding: 10px;
-    margin-top: 550px;
-    /* margin-bottom: 200px; */
-}
-
-button {
-    background: linear-gradient(to top, #FF3898, #9C225D); /* Gradiente rosa de baixo para cima */
-    color: white; /* Cor do texto em branco para maior contraste */
-    border: none; /* Remove a borda */
-    padding: 20px 40px; /* Reduzi o tamanho do botão para um aspecto mais equilibrado */
-    cursor: pointer;
-    transition: background 0.3s ease-in-out, transform 0.5s ease-in-out, opacity 0.5s ease-in-out, color 0.3s ease-in-out;
-    position: absolute; /* Posição absoluta */
-    bottom: 200px; /* Fica no fundo da página */
-    left: 50%; /* Centraliza horizontalmente */
-    transform: translateX(-50%); /* Centraliza horizontalmente */
-    width: 20%; /* Defina a largura como 20% da largura da tela */
-    border-radius: 20px; /* Borda arredondada */
-}
-
-button:hover {
-    background: linear-gradient(to top, #9C225D, #FF3898); /* Gradiente rosa invertido quando hover */
-    color: white; /* Cor do texto em branco quando hover */
-}
-
-
-.button-hidden {
-    opacity: 0; /* Torna o botão invisível */
 }
