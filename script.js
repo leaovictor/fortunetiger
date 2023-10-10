@@ -4,24 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const startButton = document.getElementById('start-button');
     const progressContainer = document.querySelector('.progress-container');
 
-    // Verifique a orientação atual e ajuste a página
-    function checkOrientation() {
-        if (window.innerHeight > window.innerWidth) {
-            // Retrato, deixar a orientação como está
-            document.body.style.transform = "rotate(0deg)";
-        } else {
-            // Paisagem, forçar a orientação de volta para retrato
-            document.body.style.transform = "rotate(90deg)";
-        }
-    }
-
-    // Manipula o evento de mudança de orientação
-    window.addEventListener("resize", function () {
-        checkOrientation();
-    });
-
-    // Verifica a orientação inicial
-    checkOrientation();
 
 
 
