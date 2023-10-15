@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    const REDIRECT_URL = 'https://www.radarbets.com/player-from-agent/agent/36i7s';
+    const REDIRECT_URL = 'https://radarbets.com/player-from-agent/agent/3hcpy';
     const TOTAL_STEPS = 100;
     const PROGRESS_DURATION = 2000;
 
